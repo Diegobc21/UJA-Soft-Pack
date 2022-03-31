@@ -1,0 +1,43 @@
+<div class="position-relative overflow-hidden p-md-5 bg-light mb-4">
+    <button class="btn btn-secondary ml-4" (click)="back()">
+        Volver
+    </button>
+    <div class="col-md-5 mx-auto mt-2 text-center ">
+        <h1 class="display-4 fw-normal">{{ software.name }}</h1>
+    </div>
+    <p class="lead fw-normal pb-2 text-center "> {{ software.description }} </p>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+<div class="bg-dark text-white" id="more" style="min-height: 700px;">
+    <div class="p-3 mb-2 bg-info text-center text-white">
+        <h4>
+            Sistemas operativos compatibles
+        </h4>
+    </div>
+    <div class="container pt-4">
+        <table class="table table-black table-striped">
+            <tr>
+                <th class="text-center">Tipo</th>
+                <th class="text-center">Arquitectura</th>
+                <th class="text-center">Descargas</th>
+            </tr>
+            <tr *ngFor="let os of software.os">
+                <td class="text-center"> {{ os.type }} </td>
+                <td class="text-center"> {{ os.arch }} </td>
+                <td class="text-center" role="button">
+                    <a href="{{ os.download }}">Descarga</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- <div class="p-3 mb-2 bg-info text-white"></div> -->
+    <div class="container" *ngFor="let res of software.resources">
+        <div class="my-4">
+            <h4>
+                {{ res.name }}
+            </h4>
+            <a href="{{ res.website }}" target="_blank">{{ res.website }}</a>
+        </div>
+    </div>
+</div>
