@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <h1 class="display-4">Encuentra el material que necesitas aquí</h1>
+    <h1 class="display-4">Categoría: <span class="text-uppercase text-bold">{{ name }}</span></h1>
 </div>
 
 
@@ -9,7 +9,6 @@
         <div class="list-group-item bg-info text-white">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">Herramientas</h5>
-                <!-- <small>n elementos</small> -->
             </div>
         </div>
         <div *ngFor="let software of softwareList">
@@ -18,7 +17,7 @@
                     <h5 class="mb-1">{{ software.name }}</h5>
                     <small class="text-muted">Haz click para ver más</small>
                 </div>
-                <p class="mb-1">{{software.description}}</p>
+                <p class="mb-1">{{ software.description }}</p>
                 <small class="text-muted"></small>
             </a>
         </div>

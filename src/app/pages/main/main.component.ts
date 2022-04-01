@@ -14,12 +14,9 @@ export class MainComponent implements OnInit {
 
   softwareList: Software[] = [];
 
-  constructor( private softwareService: SoftwareService, private router: Router ) { 
+  constructor( private softwareService: SoftwareService, private router: Router) { 
     this.selectedName = "";
   }
-
-  softwareList$: any;
-
   
   ngOnInit(): void {
     this.softwareService.getSoftware().subscribe(resp => 
@@ -28,7 +25,7 @@ export class MainComponent implements OnInit {
   }
 
   gotoItem(id: number) {
-    this.router.navigate(['/'+ id ]);
+    this.router.navigate(['/software/'+ id ]);
   }
 }
 

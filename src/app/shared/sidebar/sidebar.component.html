@@ -10,10 +10,8 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
-                <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
                 <li class="nav-item menu-close">
-                    <a href="#" class="nav-link bg-info">
+                    <a role="button" class="nav-link bg-info">
                         <i class="nav-icon fas fa-file-upload"></i>
                         <p>
                             Categorías
@@ -21,22 +19,16 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                        <li *ngFor="let category of categories" class="nav-item">
+                            <a role="button" (click)="gotoItem(category.name)" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Categoría 1</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Categoría 2</p>
+                                <p class="text-bold text-uppercase"> {{ category.name }} </p>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="https://github.com/Diegobc21/UJA-SoftPack-Old" target="_blank" class="nav-link">
+                    <a href="https://github.com/Diegobc21/UJA-Soft-Pack" target="_blank" class="nav-link">
                         <i class="nav-icon fab fa-github"></i>
                         <p>
                             GitHub
